@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Print Last N Array Elements</title>
+<script>
+function getLastNElements()
+{
+	var list=[23,45,89,4,47,99,3,12,771,-99,98];
+	var lastElementsList=new Array();
+	
+	var counter=document.getElementById("getCount").value;
+	
+	if( isNaN(counter)==false || parseInt(counter)>0 )
+	{
+		var seekCount=parseInt(counter);
+		var endIndex=1;
+		while(seekCount>0 && endIndex<list.length)
+		{
+			lastElementsList.push(list[list.length-endIndex]);
+			seekCount--;
+			endIndex++;
+		}
+		document.getElementById("disp").innerHTML=lastElementsList;
+	}
+	else
+		document.getElementById("disp").innerHTML="Enter a positive number in[0,10]";
+}
+</script>
+</head>
+<body>
+<p>Enter the number of elements to get:</p>
+<input type="text" id="getCount">
+<button id="print" onclick="getLastNElements()">Show elements</button>
+<p id="disp"></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Divide by zero error</title>
+<script>
+function checkDivisibility()
+{
+	var divisor=document.getElementById("divisor").value,
+	dividend=document.getElementById("dividend").value;
+	var result=document.getElementById("result");
+	try{
+		if(Math.abs(parseFloat(divisor))==0)
+			throw "Divide by zero is not possible";
+		else if(isNaN(divisor) || isNaN(dividend))
+			throw "Enter valid dividend and divisor";
+		else
+			result.innerHTML="Result: "+(parseFloat(dividend)/parseFloat(divisor)).toFixed(2);
+	}catch(err)
+	{
+		result.innerHTML="Error:"+err;
+	}
+}
+
+</script>
+</head>
+<body>
+	<p>Dividend:</p>
+	<input value=5 id="dividend"/>
+	<p>Divisor:</p>
+	<input value=0 id="divisor"/>
+	<button onClick="checkDivisibility()">Divide</button>
+	<p id="result"></p>
+</body>
+</html>

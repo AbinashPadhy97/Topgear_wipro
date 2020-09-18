@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	//function to check a given number is prime
+	function isPrime(n){
+		var i=1;
+		divisibleCounter=0;
+		for(;i<=n;i++)
+		{
+			if(n%i==0)
+				divisibleCounter++;
+		}
+		if(divisibleCounter<=2)
+			return true;
+		return false;
+	}
+	function primeSort(){
+		var display=document.getElementById("display");
+		//convert the string input into a integer value
+		var n=Math.floor(parseInt(document.getElementById("UserNumber").value));
+		itr=2;
+		var primeNums=new Array();
+		//Checking for a positive range
+		if(n>0)
+		{
+			while(itr<=n)
+			{
+				if(isPrime(itr))
+					primeNums.push(itr);
+				itr++;
+			}
+			
+			//Checking the count of prime number
+			if(primeNums.length>0)
+				/*compare function is used in sort method 
+				to stop sorting alphabetically*/
+				display.innerHTML=primeNums.sort(function(a,b){(a-b)>0?true:false});
+			else
+				display.innerHTML="No prime numbers found..";
+		}
+		else
+			display.innerHTML="Enter a number grater than 0";
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="UserNumber">
+	<button onClick="primeSort()">Print Sorted Prime</button>
+	<p id="display"></p>
+	<!-- <p id="display2"></p>  -->
+</body>
+</html>

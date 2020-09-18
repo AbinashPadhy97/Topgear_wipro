@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+	padding:0;
+	margin:0;
+}
+#Calculator{
+	margin-left:40%;
+	width:160px;
+	border:2px solid #26265A;
+	background-color:#3F3F53;
+}
+input
+{
+	border:1px solid black;
+	height:50px;
+	width:50px;
+	text-align:center;
+	font-weight:bold;
+}
+input:active
+{
+	color:white;
+	background-color: #B5B5ED;
+}
+#result
+{
+	border:1px solid black;
+	width:160px;
+	height:50px;
+	text-align:right;
+	background-color:white;
+}
+</style>
+<script>
+	var expression="";
+	function makeExpression(key){
+		var reultExp;
+		switch(key){
+			case '0':
+			case '1':
+			case '2':
+			case '3':
+			case '4':
+			case '5':
+			case '6':
+			case '7':
+			case '8':
+			case '9':
+			case '+':
+			case '-':
+			case '*':
+			case '/':
+				expression+=key;
+				document.getElementById("result").innerHTML=expression;
+				break;
+			case '=':
+				//eval function is predefined method to solve an expression
+				reultExp=eval(expression);
+				document.getElementById("result").innerHTML=expression+" = "+ reultExp;
+				expression="";
+		}
+	}	
+</script>
+</head>
+<body>
+	<div id="Calculator" style="padding:10px">
+		<p id="result">Result</p>
+		<table id="keys">	
+			<tr>
+				<td><input type="button" onclick="makeExpression('1')" value="1"></td>
+				<td><input type="button" onclick="makeExpression('2')" value="2"></td>
+				<td><input type="button" onclick="makeExpression('3')" value="3"></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="makeExpression('4')" value="4"></td>
+				<td><input type="button" onclick="makeExpression('5')" value="5"></td>
+				<td><input type="button" onclick="makeExpression('6')" value="6"></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="makeExpression('7')" value="7"></td>
+				<td><input type="button" onclick="makeExpression('8')" value="8"></td>
+				<td><input type="button" onclick="makeExpression('9')" value="9"></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="makeExpression('0')" value="0"></td>
+				<td><input type="button" onclick="makeExpression('+')" value="+"></td>
+				<td><input type="button" onclick="makeExpression('-')" value="-"></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="makeExpression('*')" value="*"></td>
+				<td><input type="button" onclick="makeExpression('/')" value="/"></td>
+				<td><input type="button" onclick="makeExpression('=')" value="="></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

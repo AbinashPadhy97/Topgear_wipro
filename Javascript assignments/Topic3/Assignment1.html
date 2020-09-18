@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function numberMatch(){
+		randomNum=Math.floor(Math.random()*10+1);
+		UserNumber=parseInt(prompt("Guess the random number "));
+		val=document.getElementById("desc");
+				
+		if(UserNumber!=NaN && UserNumber===randomNum)
+			val.innerHTML="Matched";
+		else
+			val.innerHTML="Not Matched";
+	}
+</script>
+</head>
+<body>
+	<button onClick="numberMatch()">Guess</button>
+	<p id="desc"></p>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Hover on image to change</title>	
+<script>
+	function changeImg(x)
+	{
+		switch(x)
+		{
+			case 1:
+				document.getElementById("brahmaImg").src="brahma1.jpg";
+				break;
+			case 2:
+				document.getElementById("vishnuImg").src="vishnu1.jpg";
+				break;
+			case 3:
+				document.getElementById("maheswarImg").src="maheswar1.jpg";
+				break;
+		}
+	}
+	function changeBackImg(x)
+	{
+		switch(x)
+		{
+			case 1:
+				document.getElementById("brahmaImg").src="brahma.jpg";
+				break;
+			case 2:
+				document.getElementById("vishnuImg").src="vishnu.jpg";
+				break;
+			case 3:
+				document.getElementById("maheswarImg").src="maheswar.jpg";
+				break;
+		}
+	}
+</script>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	header{
+		width:100%;
+		text-align:center;
+	}
+	
+	.images{
+		display:inline-block;
+		width:32%;
+	}
+	h1{
+		text-align:center;
+		color:white;
+	}
+	
+	.images:hover h1{
+		color: gold;
+		background-color:red;
+		margin-top:;
+	}
+		
+</style>
+</head>
+<body>
+	<header>
+	<h2>Hover on images to change<h2>
+	</header>
+	
+	<section id="split3">
+		<div class="images">
+			<img id="brahmaImg" src="brahma.jpg" onmouseover="changeImg(1)" onmouseout="changeBackImg(1)" width=100%; height="500">
+			<h1>Brahma</h1>
+		</div>
+		<div class="images">
+			<img id="vishnuImg" src="vishnu.jpg" onmouseover="changeImg(2)" onmouseout="changeBackImg(2)" width=100%; height="500">
+			<h1>Vishnu</h1>
+		</div>
+		<div class="images">
+			<img id="maheswarImg" src="maheswar.jpg" onmouseover="changeImg(3)" onmouseout="changeBackImg(3)" width=100%; height="500">
+			<h1>Maheswar</h1>
+		</div>
+	</section>
+</body>
+</html>

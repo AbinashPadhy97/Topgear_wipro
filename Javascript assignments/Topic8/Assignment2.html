@@ -1,0 +1,39 @@
+<script>
+class CD{
+	constructor(nm,publ,amt){
+		this.name=nm;
+		this.publisher=publ;
+		this.price=amt;
+		this.finalPrice=this.price+0.1* this.price-0.03 * this.price;
+	}
+	
+	displayAllDetails()
+	{
+		document.write("<br>CD Name:"+ this.name+"<br>CD Publicher:"+this.publisher+"<br>CD Final price:"+this.finalPrice+"<br>");
+	}
+	getName(){return this.name;}
+	setName(nm){this.name=nm;}
+	getPublisher(){return this.Publisher;}
+	setPublisher(Publisher){this.Publisher=Publisher;}
+	getPrice(){return this.price;}
+	setPrice(price){this.price=price;}
+	getFinalPrice(){return this.finalPrice;}
+}
+var cdList= new Array();
+cdList.push(new CD("Abcd","Publisher1",154));
+cdList.push(new CD("Bcde","Publisher2",764));
+cdList.push(new CD("Cerdef","Pblisher2",111));
+cdList.push(new CD("Ccrdef","Pisher2",60));
+cdList.forEach(cdUnit=>cdUnit.displayAllDetails());
+document.write("<br>----------PRICE SORTED OBJECTS-----------<br>");
+sortedCdList= cdList.sort((cd1,cd2)=>cd1.getFinalPrice()>=cd2.getFinalPrice()?1:-1);
+sortedCdList.forEach(cdUnit=>cdUnit.displayAllDetails());
+
+</script>
+<body>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Sum of Multiples of 3 and 5 upto 1000</title>
+<script>
+	function fun(n1=3,n2=5){
+		var multiple,x=n1*n2;
+		var count=1;
+		var sum=0;
+		do{
+			multiple=x*count++;
+			sum+=multiple;
+		}while(multiple<=1000);
+		document.write("Sum of multiples of 3 and 5 under 1000:"+sum);
+		return count;
+	}
+	document.write("<br>Number of multiples:"+fun());
+</script>
+</head>
+<body>
+   
+</body>
+</html>

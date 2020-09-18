@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Display and count dropdown items</title>
+	<script>
+		function readOptions(){
+			var sel=document.getElementById("dropDown");
+			var optCount=sel.options.length;
+			var str="";
+			var opt;
+			for(let itr=0;itr<optCount;itr++)
+			{
+				opt=sel.options[itr].value;
+				if(sel.options[itr].selected === true)
+					str+="(Default)";
+				str+=opt+"\n";
+			}
+			alert(str);
+		}
+	</script>
+</head>
+<body>
+	
+	<select id="dropDown">
+		<option>Option1</option>
+		<option>Option2</option>
+		<option selected>Option3</option>
+		<option>Option4</option>
+		<option>Option5</option>
+	</select>
+	<button onclick="readOptions()">Display</button>
+</body>
+</html>

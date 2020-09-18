@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script>
+	function getAmount()
+	{
+		var amt=prompt("Enter donation amount(in rupees):");
+		if(!isNaN(amt) && amt!=null )
+		{
+			amt=Math.round(parseFloat(amt));
+			alert("Donation amount is Rs "+ Math.abs(amt));
+		}
+		else
+			alert("Enter valid donation amount..");
+	}
+</script>
+</head>
+<body>
+	<h1>Donation Alert</h1>
+	<button onclick="getAmount()">Donate for a cause</button>
+</body>
+</html>

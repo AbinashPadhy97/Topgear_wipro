@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MixAlternateElementsOfArrays</title>
+<script>
+
+function mixupArrays()
+{
+	var list1=[45,89,32,0,1,-99,3,4]
+	var list2=['t','s','h','i']
+	var resultant=new Array();
+	var itr=0;
+	while(itr<list1.length && itr<list2.length)
+	{
+		resultant.push(list1[itr]);
+		resultant.push(list2[itr]);
+		itr++;
+	}
+	while(itr<list1.length)
+		resultant.push(list1[itr++]);
+	while(itr<list2.length)
+		resultant.push(list2[itr++]);
+	return resultant;
+}
+
+document.write("Mixed array: <br>"+mixupArrays());
+</script>
+<head>
+<html>

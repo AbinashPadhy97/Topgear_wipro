@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Average Marks</title>
+<script>
+	function avgMarks(){
+		var markList=new Array();
+		var sum=0;
+		var mark;
+		for(let i=0;i<10;i++)
+		{
+			mark=Math.random()*100;
+			sum+=parseFloat(mark.toFixed(2));
+			markList.push(mark.toFixed(2));
+		}
+		document.write("Marks are ");
+		markList.forEach(m=>document.writeln(m+","));
+		document.writeln("<br>Average is "+(sum/10).toFixed(2));
+	}
+	avgMarks();
+</script>
+</head>
+<body>
+   
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	do{
+		var prmpt=prompt("Enter a valid color for background");
+		setForeground(prmpt);
+		setBackground(prmpt);
+	}while(prmpt!=null || prmpt.length!=0);
+	
+	function setBackground(color)
+	{
+		document.getElementById("backDesc").innerHTML="Background color is "+ color;
+		document.body.style.backgroundColor = color;
+	}
+	function setForeground(color)
+	{
+		document.getElementById("forDsc").innerHTML="Foreground color is "+ color;
+		var element=document.getElementById("foreground");
+		document.element.style.backgroundColor = color;
+	}
+</script>
+</head>
+<body id="background">
+	<p id="backDesc"></p>
+	<div id="foreground" style="border:2px solid black;height:500px;width:500px;margin-left:50%;transform:translate(-50%,0);margin-top:50px">
+		<p id="forDsc"></p>
+	</div>
+</body>
+</html>

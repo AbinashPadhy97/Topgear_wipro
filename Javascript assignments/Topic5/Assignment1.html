@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function isCompleteNumber(num)
+	{
+		for(i=0;i<num.length;i++)
+			if(isNaN(num.charAt(i)))
+				return false;
+		return parseInt(num);
+	}
+	function addNumbers()
+	{
+		var a=document.getElementById("num1").value;
+		var b=document.getElementById("num2").value;
+		str="Sorry.... Only Nos will be added"
+		num1=isCompleteNumber(a);
+		num2=isCompleteNumber(b);
+		document.getElementById("output").innerHTML=num1?(num2?(num1+num2):str):str
+	}
+</script>
+</head>
+<body>
+	
+	<p>Num1:</p><br><input type="text" id="num1">
+	<p>Num2:</p><br><input type="text" id="num2">
+	<br>
+	<button onClick="addNumbers()">ADD</button>
+	<p id="output"></p>
+</body>
+</html>

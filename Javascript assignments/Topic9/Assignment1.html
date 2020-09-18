@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Get Occurrences</title>
+<script>
+var str;
+function getOccurrencesCount()
+{
+	str=document.getElementById("str").value.toLowerCase().split("");
+	var letter=document.getElementById("letter").value;
+	var count=0;
+	str.forEach(ch=>
+	{
+		if(letter==ch)
+			count++;
+	});
+	if(count>0)
+		document.getElementById("showCount").innerHTML="Occurrences of "+letter+" is "+ count;
+	else
+		document.getElementById("showCount").innerHTML="Letter not found in string	"
+}
+</script>
+<head>
+<h1>Get Occurrences</h1>
+<p>Enter string:</p>
+<input type="text" id="str">
+<p>Enter a letter here:</p>
+<input type="text" id="letter" maxlength=1>
+<button id="getCount" onclick="getOccurrencesCount()">Count</button>
+<p id="showCount"></p>
+<html>

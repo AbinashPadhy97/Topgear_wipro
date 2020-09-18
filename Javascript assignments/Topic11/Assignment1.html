@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Multiplication Sign of 3 numbers</title>	
+<script>
+	function multilyAll()
+	{
+		var x=document.getElementById("num1").value;
+		var y=document.getElementById("num2").value;
+		var z=document.getElementById("num3").value;
+		
+		
+		if(x.length==0 || y.length==0 || z.length==0 )
+			alert("Provide all three numbers");
+		if(isNaN(x) || isNaN(y) || isNaN(z) )
+			alert("Enter only numbers with + or - sign");
+		else
+		{
+			var result=parseFloat(x)*parseFloat(y)*parseFloat(z);
+			if(result>0)
+				alert("The sign is +");
+			else if(result<0)
+				alert("The sign is -");
+			else
+				alert("The multiplication result is 0");
+		}
+	}
+</script>
+
+</head>
+<body>
+	<p>Number 1</p>
+	<input value="-5.6" id="num1"/>
+	<p>Number 2</p>
+	<input value="0.6" id="num2"/>
+	<p>Number 3</p>
+	<input value="1.7" id="num3"/>
+	<button onClick="multilyAll()">Multiply</button>
+</body>
+</html>

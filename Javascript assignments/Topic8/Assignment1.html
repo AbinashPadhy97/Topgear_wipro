@@ -1,0 +1,20 @@
+<script>
+class CD{
+	constructor(nm,publ,amt){
+		this.name=nm;
+		this.publisher=publ;
+		this.price=amt;
+	}
+	
+	displayAllDetails()
+	{
+		var discount=0.03 * this.price;
+		var tax=0.1** this.price;
+		var finalPrice=this.price+tax-discount;
+		document.write("CD Name:"+ this.name+"<br>CD Publicher:"+this.publisher+"<br>CD Final price:"+finalPrice);
+	}
+}
+var harryPotter=new CD("Harry Potter Series", "J.K.Rowlings", 500);
+harryPotter.displayAllDetails();
+
+</script>

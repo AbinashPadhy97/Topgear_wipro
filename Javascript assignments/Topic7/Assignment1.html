@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>100 fibonacci numbers</title>
+	<style>
+		p{
+			display : block; 
+			overflow-wrap: break-word;
+			max-width : 100%;
+		}
+	</style>
+</head>
+<body>
+	<!-- <button onClick="printFibonacciSeries()">Print</button>  -->
+	<p id="print"></p>
+	<script>
+	function printFibonacciSeries()
+	{
+		var a=0,b=1;
+		var n=100;
+		var series="0,1,";
+		for(itr=1;itr<=n-2;itr++)
+		{
+			sum=(a+b);
+			a=b;
+			b=sum;
+			series+=sum+",";
+		}
+		document.getElementById('print').innerHTML=series;
+	}
+	printFibonacciSeries();
+	</script>
+</body>
+</html>

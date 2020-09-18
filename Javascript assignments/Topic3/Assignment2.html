@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+	function camelCase()
+	{
+		var element=document.getElementById("StrIn");
+		str=element.value;
+		console.log("String:\'"+str+"\'");
+		str=str.trim();
+		itr=0;
+		newStr=""+str.charAt(0).toUpperCase();
+		itr++;
+		while(itr<str.length)
+		{
+			if(str.charAt(itr)==' ')
+			{
+				//insert the white space
+				newStr+=str.charAt(itr);				
+				itr++;
+				//Capitalize next char and insert
+				newStr+=str.charAt(itr).toUpperCase();
+				itr++;
+			}
+			else
+			{
+				//convert in between letters to lower case
+				if(str.charAt(itr-1)!=' ')
+					newStr+=str.charAt(itr).toLowerCase();
+				itr++;
+			}
+		};
+		document.getElementById("output").innerHTML=newStr;
+	}
+	
+	</script>
+</head>
+<body>
+	<input type="text" size=50 id="StrIn">
+	<!--<input type="text" size=50 id="StrIn" onChange="camelCase()">-->
+	<button onClick="camelCase()">Capitalise</button>
+	<p id="output"></p>
+</body>
+</html>

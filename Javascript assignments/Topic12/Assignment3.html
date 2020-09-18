@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>Display Alternate Objects</title>
+<script>
+	var empid=1;
+	class Employee{
+		constructor(fn="John",ln="Doe",id)
+		{
+			this.fName=fn;
+			this.lName=ln;
+			this.empNo=id;
+		}
+		toString()
+		{
+			return "<br>First Name: "+this.fName+" ; Last Name: "+this.lName+" ; Employee id: "+this.empNo+"<br>";
+		}
+	}
+	var empList=new Array();
+	var empObj;
+	for(let itr=1;itr<=10;itr++)
+	{
+		empObj=new Employee("Fname"+itr,"Lname"+itr,empid++);
+		empList.push(empObj);
+	}
+	for(let itr=0;itr<empList.length;itr+=2)
+		document.write(empList[itr]);
+</script>
+</head>
+<body>
+   
+</body>
+</html>
